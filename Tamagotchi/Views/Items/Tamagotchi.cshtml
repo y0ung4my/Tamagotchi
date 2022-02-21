@@ -1,0 +1,19 @@
+@using Tamagotchi.Models;
+
+<h1>Tamagotchi Stats</h1>
+<ul>
+  @foreach (Tamagotchi item in Model)
+  {
+    <li>@item.Food</li>
+    <li>@item.Mood</li>
+    <li>@item.Sleep</li>
+  }
+</ul>
+
+<input type="submit" name="answer" value="Accept" class="btn btn-success" />
+
+<button type="button">Play</button>
+
+<button type="submit">Feed</button>
+
+<button type="submit">Rest</button>
