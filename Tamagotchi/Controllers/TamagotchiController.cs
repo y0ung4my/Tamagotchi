@@ -1,17 +1,28 @@
 using Microsoft.AspNetCore.Mvc;
-using Tamagotchi.Models;
+using Tama.Models;
 using System.Collections.Generic;
 
-namespace Tamagotchi.Controllers
+namespace Tama.Controllers
 {
-    public class TamagotchiController: Controllers
+    public class TamagotchiController : Controller
     {
-        [HttpGet("/items")]
-     
-       public ActionResult Index()
-       {
-           List<Tamagotchi> myTamagotchi = Tamagotchi.CreateTama();
-           return View(myTamagotchi);
-       }
+        [HttpGet("/tamagotchi")]
+        public ActionResult Tamagotchi(string name)
+        {
+            Tamagotchi myTamagotchi = new Tamagotchi(name);
+            return View(myTamagotchi);
+        }
+        //   [HttpGet("/formsforbuttons")]
+        // public ActionResult Tamagotchi()
+        // {
+        //     Button myButton= new Button (); 
+        //     return ?? 
+        // }
+        //    [HttpPost("/updatedforms")]
+        // public ActionResult Tamagotchi()
+        // {
+        //     Button myButton= new Button (); 
+        //     return ?? 
+        // }
     }
 }

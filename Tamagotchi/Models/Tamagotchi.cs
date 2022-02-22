@@ -1,6 +1,7 @@
 using System.Collections.Generic;
+using Button.Models;
 
-namespace Tamagotchi.Models
+namespace Tama.Models
 {
   public class Tamagotchi
   {
@@ -9,33 +10,37 @@ namespace Tamagotchi.Models
     public int Mood { get; set; }
     public int Sleep { get; set; }
 
-    public Tamagotchi (int food, int mood, int sleep)
+    public Tamagotchi (string inputtedName)
     {
-      Food = food;
-      Mood = mood;
-      Sleep = sleep;
+      Food = 10;
+      Mood = 10;
+      Sleep = 10;
+      Name = inputtedName;
     }
-    public void CreateTama(string inputtedName) 
-    {
-      this.Name = inputtedName;
-      this.Food = 10;
-      this.Mood = 10;
-      this.Sleep = 10;
 
-    public bool accelerate = false;
-    public Button throttle;
-          
-    void Start ()
+    //this is temporary
+    ButtonValues newButtonValues = new ButtonValues(true, true);
+
+    public void Care ()
     {
-          throttle.onClick.AddListener(throttleTrue);
+      if (newButtonValues.ButtonRest == true)
+      {
+        this.Food -= 2; 
+        this.Mood += 2;
+        this.Sleep += 2;
+      }
+      else if (newButtonValues.ButtonEat == true)
+      {
+        this.Food += 2; 
+        this.Mood += 2;
+        this.Sleep -= 2;
+      }
+      else
+      {
+        this.Food -= 2; 
+        this.Mood += 2;
+        this.Sleep -= 2;
+      }
     }
-          
-    public void Update()
-      { 
-    >> IF (throttleTrue) <<
-    accelerate = true;
-    { Do stuff.. }
-    accelerate = false;
-    } 
   }       
 }
