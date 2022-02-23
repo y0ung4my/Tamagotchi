@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Button.Models;
 
 namespace Tama.Models
 {
@@ -18,29 +17,25 @@ namespace Tama.Models
       Name = inputtedName;
     }
 
-    //this is temporary
-    ButtonValues newButtonValues = new ButtonValues(true, true);
-
-    public void Care ()
+    public void Rest ()
     {
-      if (newButtonValues.ButtonRest == true)
-      {
-        this.Food -= 2; 
-        this.Mood += 2;
-        this.Sleep += 2;
-      }
-      else if (newButtonValues.ButtonEat == true)
-      {
-        this.Food += 2; 
-        this.Mood += 2;
-        this.Sleep -= 2;
-      }
-      else
-      {
-        this.Food -= 2; 
-        this.Mood += 2;
-        this.Sleep -= 2;
-      }
+      this.Food -= 2; 
+      this.Mood += 2;
+      this.Sleep += 2;
+    }
+    
+    public void Feed ()
+    {
+      this.Food += 2; 
+      this.Mood += 2;
+      this.Sleep -= 2;
+    }
+
+    public void Play ()
+    {
+      this.Food -= 2; 
+      this.Mood += 2;
+      this.Sleep -= 2;
     }
   }       
 }

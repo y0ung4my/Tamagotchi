@@ -6,23 +6,29 @@ namespace Tama.Controllers
 {
     public class TamagotchiController : Controller
     {
-        [HttpGet("/tamagotchi")]
-        public ActionResult Tamagotchi(string name)
+        [HttpPost("/tamagotchi")]
+        public ActionResult Index(string name)
         {
             Tamagotchi myTamagotchi = new Tamagotchi(name);
             return View(myTamagotchi);
         }
-        //   [HttpGet("/formsforbuttons")]
-        // public ActionResult Tamagotchi()
+        // [HttpPost("/tamagotchi/sleep")]
+        // public ActionResult Rest(Tamagotchi myTamagotchi)
         // {
-        //     Button myButton= new Button (); 
-        //     return ?? 
-        // }
-        //    [HttpPost("/updatedforms")]
-        // public ActionResult Tamagotchi()
+        //     myTamagotchi.Rest();
+        //     return RedirectToAction("Index"); 
+        // } 
+        // [HttpPost("/tamagotchi/eat")]
+        // public ActionResult Feed(Tamagotchi myTamagotchi)
         // {
-        //     Button myButton= new Button (); 
-        //     return ?? 
-        // }
+        //     myTamagotchi.Feed();
+        //     return RedirectToAction("Index"); 
+        // } 
+        // [HttpPost("/tamagotchi/play")]
+        // public ActionResult Play(Tamagotchi myTamagotchi)
+        // {
+        //     myTamagotchi.Play();
+        //     return RedirectToAction("Index"); 
+        // } 
     }
 }
